@@ -1,0 +1,75 @@
+<view class="category-box">
+    <view class="left-box">
+        <block wx:for="{{categoryTypeArr}}" wx:key="{{item.id}}">
+        <view bindtap="changeCategory" data-id="{{item.id}}"  class="{{css_category_index==item.id? 'clickcategory_border': ''}}" >
+            {{item.name}}
+        </view>
+        </block>
+
+
+    </view>
+    <view class="right-box">
+
+        <!--<view class="showcategory">-->
+
+            <!--<view class="topimage">-->
+                <!--<image src="{{categoryInfo.topImgUrl}}" mode="widthFix"></image>-->
+            <!--</view>-->
+            <!--<view class="title">-->
+                <!--{{categoryInfo.products[0].name}}-->
+            <!--</view>-->
+            <!--<view class="content">-->
+
+                <!--<block wx:for="{{categoryInfo.products}}" wx:key="{{unique}}">-->
+                    <!--<view class="product_detail">-->
+                    <!--<image src="{{item.main_img_url}}" bindtap="clickproduct" data-id="{{item.id}}"></image>-->
+                    <!--<text>{{item.name}}</text>-->
+                    <!--</view>-->
+                <!--</block>-->
+
+            <!--</view>-->
+
+
+        <!--</view>-->
+
+        <view>
+            <image src="{{categoryInfo.topImgUrl}}" mode="widthFix"></image>
+        </view>
+        <view class="title">
+            {{categoryInfo.title}}
+        </view>
+
+
+
+        <view class="test1">
+
+
+
+
+
+
+            <block wx:for="{{categoryInfo.products}}" wx:key="{{unique}}">
+            <view bindtap="clickproduct" data-id="{{item.id}}">
+            <image src="{{item.main_img_url}}" ></image>
+            <text>{{item.name}}</text>
+            </view>
+            </block>
+
+
+
+
+
+
+
+
+
+
+        </view>
+
+
+
+
+
+
+    </view>
+</view>

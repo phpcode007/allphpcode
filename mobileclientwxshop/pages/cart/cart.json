@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-checkbox": "../vant/checkbox/index",
+    "van-button": "../vant/button/index",
+    "van-stepper": "../vant/stepper/index",
+    "van-dialog": "../vant/dialog/index"
+  }
+}

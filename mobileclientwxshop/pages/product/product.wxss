@@ -1,0 +1,132 @@
+.product_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.product_header image {
+  width: 430rpx;
+  height: 430rpx;
+}
+
+.cart {
+  top: 20rpx;
+  right: 50rpx;
+  position: absolute;
+}
+
+.cart image {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.cart text {
+  border-radius: 50%;
+  width: 65rpx;
+  height: 65rpx;
+  /* 宽度和高度需要相等 */
+  top: -15rpx;
+  left: -20rpx;
+  position: absolute;
+  background-color: #AB956D;
+  color: white;
+  opacity:0.8;
+}
+
+
+
+
+
+
+.chooiceproductcount {
+  /*width: 200rpx;*/
+  height: 100rpx;
+  background-color: #ab956d;
+  color: #fff;
+  display: flex;
+  width: 660rpx;
+  margin: 30rpx auto;
+  border-radius: 100rpx;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+.countnumber {
+  display: flex;
+  /*flex-direction: row;*/
+}
+
+.abc123 {
+  margin-left: 30rpx;
+}
+
+/*.countnumber image {*/
+  /*width: 50rpx;*/
+  /*height: 50rpx;*/
+
+/*}*/
+
+.addcart {
+  width: 100%;
+  /*height: 40rpx;*/
+  /*background-color: aqua;*/
+  text-align: center;
+}
+
+.addcart image {
+  margin-left: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+
+
+}
+
+.showname {
+  text-align: center;
+}
+
+.showname view {
+  margin-top: 10rpx;
+}
+
+.tabbox {
+  display: flex;
+}
+
+.tabbox view {
+  display: flex;
+
+  flex: 1;
+  height: 80rpx;
+  /*background-color: red;*/
+  margin-top: 10rpx;
+  align-items: center;
+  justify-content: center;
+  /*flex-direction: column;*/
+  /*text-align: center;*/
+
+
+}
+
+
+.tabbox_border {
+  border-bottom: 5rpx solid #ddd1be;
+}
+
+
+.tabbox_product_detail image {
+  width: 100%;
+  height: 400rpx;
+  /*margin-top: 0rpx;*/
+  background-color: deeppink;
+  /* 如果发现图片有空行，可以把图片的inline-block改为block */
+  display: block;
+}
+
+.tabbox_product_weixiu {
+  margin-top: 50rpx;
+  text-align: center;
+}

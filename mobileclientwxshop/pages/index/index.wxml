@@ -1,0 +1,47 @@
+<view class="container">
+
+
+    <swiper indicator-dots="true" autoplay="true" previous-margin="0rpx" next-margin="0rpx" circular="true">
+        <block wx:for="{{bannerArray}}" wx:key="{{unique}}">
+            <swiper-item>
+                <image src="{{item.img_url}}" mode="aspectFit"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class="index_tips">
+        <text>精品主题</text>
+    </view>
+
+    <view class="theme">
+        <view class="theme_content1">
+            <image src="{{themeArray[0].topic_img_url}}"></image>
+        </view>
+        <view class="theme_content2">
+            <image src="{{themeArray[1].topic_img_url}}"></image>
+        </view>
+    </view>
+
+    <view >
+        <image src="{{themeArray[2].topic_img_url}}" class="theme_content3_image"></image>
+    </view>
+
+
+    <view class="index_tips">
+        <text>最新商品</text>
+    </view>
+
+
+    <view class="newproduct">
+        <block wx:for="{{productsArr}}" wx:key="{{item.id}}">
+            <view bindtap="onClickproduct" data-id="{{item.id}}">
+                <image src="{{item.main_img_url}}"></image>
+            </view>
+        </block>
+    </view>
+
+
+    <view class="index_tips">
+        <text>------- 我是有底线的 ------- </text>
+    </view>
+</view>

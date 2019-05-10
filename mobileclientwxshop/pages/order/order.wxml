@@ -1,0 +1,94 @@
+<view class="address">
+    <block wx:if="{{addressInfo}}">
+        <view>
+            <view>
+                姓名:{{addressInfo.userName}}
+            </view>
+            <view>
+                电话号码:{{addressInfo.mobile}}
+            </view>
+            <view>
+                地址:{{addressInfo.totalDetail}}
+            </view>
+        </view>
+
+    </block>
+
+    <block wx:else>
+        <van-button type="primary" bindtap="submitorder">收货地址</van-button>
+    </block>
+
+</view>
+
+<view class="container">
+
+
+
+    <view class="productdetail1" wx:if="{{cartData.length<=0}}">
+        您还没有添加商品
+    </view>
+
+    <block wx:for="{{cart_data}}" wx:key="{{unique}}">
+        <view class="productdetail">
+
+
+            <view class="product_image">
+                <image src="{{item.main_img_url}}"></image>
+            </view>
+
+            <view class="product_nameandcount">
+                <view>
+                    <view class="prodct_name">
+                        <text>{{item.name}}</text>
+                    </view>
+                    <view class="product_count">
+
+                        ¥{{item.price}}
+
+                    </view>
+                </view>
+            </view>
+
+            <view class="product_priceanddelete">
+                <view>
+                    <view class="prodcut_price">×{{item.counts}}</view>
+
+                </view>
+            </view>
+
+        </view>
+    </block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--</view>-->
+
+    <view class="submit_product">
+
+
+
+        <view class="total">
+            合计: ¥{{totalprice}}元
+        </view>
+
+        <view>
+            <van-button type="primary" bindtap="submitorder">去付款</van-button>
+        </view>
+
+    </view>
+</view>
+
+
+<van-dialog id="van-dialog" />

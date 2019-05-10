@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="product_header">
+    <image src="{{product.main_img_url}}"></image>
+    <view class="cart">
+
+
+      <text wx:if="{{cartTotalCounts>0}}">{{cartTotalCounts}}</text>
+
+      <image src="../../imgs/icon/cart@top.png"></image>
+    </view>
+  </view>
+
+  <view class="chooiceproductcount">
+    <view class="countnumber">
+      <!--<picker bindchange="bindPickerChange" value="{{index}}" range="{{countsArray}}">-->
+        <!--<text>数量 {{productCount}}</text>-->
+        <!--<van-stepper value="{{ 1 }}" bind:change="onChange" />-->
+        <!--&lt;!&ndash;<image src="../../imgs/icon/arrow@down.png"></image>&ndash;&gt;-->
+        <!---->
+      <!--</picker>-->
+
+
+      <view>
+        <text>数量</text>
+
+      </view>
+
+      <view class="abc123">
+        <van-stepper class="aab" value="{{ 1 }}"   min="1"  max="999" bind:change="ProductCountChange" />
+      </view>
+
+
+
+
+    </view>
+
+
+
+  </view>
+
+  <view class="addcart">
+    <!--<text>加入购物车</text>-->
+    <van-button round type="danger" bindtap="addToCart">加入购物车</van-button>
+    <!--<image src="../../imgs/icon/cart.png"></image>-->
+  </view>
+
+
+  <view class="showname">
+    <view>有货</view>
+    <view>{{product.name}}</view>
+    <view>{{product.price}}元</view>
+  </view>
+
+  <view class="tabbox " bindtap="onClickTabBox">
+    <view class="{{css_tabbox_index==1? 'tabbox_border': ''}}" data-id="1">商品详情</view>
+    <view class="{{css_tabbox_index==2? 'tabbox_border': ''}}" data-id="2">产品参数</view>
+    <view class="{{css_tabbox_index==3? 'tabbox_border': ''}}" data-id="3">售后保障</view>
+  </view>
+
+  <view>
+    <view class="tabbox_product_detail" hidden="{{current_tabbox_index!=1?true:false}}">
+      <block wx:for="{{product.imgs}}" wx:key="{{unique}}">
+        <image src="{{item}}" mode="aspectFill"></image>
+      </block>
+
+    </view>
+    <view hidden="{{current_tabbox_index!=2?true:false}}">
+      <block wx:for="{{product.property}}" wx:key="{{unique}}">
+        <view>{{index}}: {{item}}</view>
+      </block>
+    </view>
+    <view class="tabbox_product_weixiu" hidden="{{current_tabbox_index!=3?true:false}}">
+      3年售后保障
+    </view>
+  </view>
+
+
+</view>

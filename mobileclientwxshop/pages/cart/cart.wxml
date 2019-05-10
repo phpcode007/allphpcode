@@ -1,0 +1,87 @@
+<view class="container">
+
+
+
+    <view class="productdetail1" wx:if="{{cartData.length<=0}}">
+        您还没有添加商品
+    </view>
+
+    <block wx:for="{{cartData}}" wx:key="{{unique}}">
+    <view class="productdetail">
+        <view class="checkbox">
+
+            <!--<van-checkbox value="checkbox{{item.id}}" data-key="checkbox{{item.id}}" bind:change="ChangeProductSelected" checked-color="#07c160" data-id="{{item.id}}"></van-checkbox>-->
+
+            <view  class="cart-item-checkbox" ontap="toggleSelect" data-id="{{item.id}}" data-status="{{item.selectStatus}}">
+                <image wx:if="{{item.selectStatus}}" src="../../imgs/icon/circle@selected.png"></image>
+                <image wx:else src="../../imgs/icon/circle@noselected.png"></image>
+            </view>
+
+        </view>
+
+        <view class="product_image">
+            <image src="{{item.main_img_url}}"></image>
+        </view>
+
+        <view class="product_nameandcount">
+            <view>
+                <view class="prodct_name">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="product_count">
+
+                    <van-stepper value="{{ item.counts }}" bind:change="ChangeProductCount" data-id="{{item.id}}"/>
+
+                </view>
+            </view>
+        </view>
+
+        <view class="product_priceanddelete">
+            <view>
+                <view class="prodcut_price">{{cartData[0].price}}元</view>
+                <view class="product_delete">
+                    <van-button round  size="mini" data-id="{{item.id}}" bindtap="deleteproductbyid">删除</van-button>
+                </view>
+            </view>
+        </view>
+
+        <!--<view class="delete">删除</view>-->
+    </view>
+    </block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--</view>-->
+
+    <view class="submit_product">
+
+        <view  class="allclick">
+            <image wx:if="{{all_selectStatus}}" src="../../imgs/icon/circle@selected.png"  bindtap="allproductclick" data-status="true"></image>
+            <image wx:else src="../../imgs/icon/circle@noselected.png"  bindtap="allproductclick" data-status="false"></image>全选
+        </view>
+
+        <view class="total">
+            合计: ¥{{totalprice}}元
+        </view>
+
+        <view>
+            <van-button type="primary" bindtap="submitorder">提交订单</van-button>
+        </view>
+
+    </view>
+</view>
+
+
+<van-dialog id="van-dialog" />
